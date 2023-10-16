@@ -1,6 +1,11 @@
 import  holidays
 
 def printNumberofPublicHolidays(year):
-    year = input()
-    for date, name in sorted(holidays.country_holidays(country='ZW', years= year).items()):
-     print(date, name)
+    numOfHolidays = 0
+    for date, name in sorted(holidays.ZW(years= year).items()):
+        print(date, name)
+        numOfHolidays += 1
+    print(f'There are {numOfHolidays} holidays in the year {year}')
+
+year = int(input('Enter a year: '))
+printNumberofPublicHolidays(year)
